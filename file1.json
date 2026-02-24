@@ -1,0 +1,45 @@
+
+{
+  "backgroundColor": "#FFF",
+  "backgroundImageUrl": "https://mycompany.com/images/background.png",
+  "inviteDomain": "",
+  "logoImageUrl": "https://static.vecteezy.com/system/resources/previews/009/481/029/non_2x/geometric-icon-logo-geometric-abstract-element-free-vector.jpg",
+  "avatarBackgrounds": [
+    "#12A378",
+    "linear-gradient(125.83deg, #000 0%, #FFF 99.09%)",
+    "asd\"<img/src=x>"
+  ],
+  "customIcons": {
+    "IconArrowUp": "https://d1ocaciu8455mf.cloudfront.net/bkso23z/8x8/arrowup.svg"
+  },
+  "labels": {
+    "en": "https://p3rr0x.github.io/en.json",
+    "fr": "https://p3rr0x.github.io/fr.json"
+  },
+  "sharedVideoAllowedURLDomains": [
+    "*"
+  ],
+  "customTheme": {
+    "palette": {
+      "ui01": "orange !important",
+      "ui02": "maroon",
+      "surface02": "darkgreen",
+      "ui03": "violet",
+      "ui04": "magenta",
+      "ui05": "blueviolet",
+      "field02Hover": "red",
+      "action01": "green",
+      "action01Hover": "lightgreen",
+      "action02Disabled": "beige",
+      "success02": "cadetblue",
+      "action02Hover": "liceblue"
+    },
+    "typography": {
+      "labelRegular": {
+        "fontSize": 25,
+        "lineHeight": 30,
+        "fontWeight": 500
+      }
+    }
+  }
+}
