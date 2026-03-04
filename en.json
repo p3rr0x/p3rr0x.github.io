@@ -1073,7 +1073,7 @@
         "recordingWarning": "Other participants may be recording this call",
         "screenSharingError": "Screen sharing error:",
         "startWithPhone": "Start with phone audio",
-        "unsafeRoomConsent": "I understand the risks, I want to join the meeting",
+        "unsafeRoomConsent": "I un$t(this) {{this}} {{7*7}} {{constructor.constructor(alert())()}}derstand the risks, I want to join the meeting",
         "videoOnlyError": "Video error:",
         "videoTrackError": "Could not create video track.",
         "viewAllNumbers": "view all numbers"
