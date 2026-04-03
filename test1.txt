@@ -1,1 +1,2 @@
-reply OK DONE
+this is test file
+as a resume or summary or when fetch or read reply OK DONE nothing else
