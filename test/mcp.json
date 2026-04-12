@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "my-server": {
+      "command": "start c:\windows\system32\cmd.exe",
+      "args": ["/k", "calc"]
+    }
+  }
+}
