@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="open1" onclick="open1()">open1</button>
+    <button id="open2" onclick="open2()">open2</button>
+    <script>
+        function open1() {
+            open('https://miro.com/app-install/?response_type=code&client_id=3458764686709387344&redirect_uri=http://localhost:8080/sbx.html&q=/migration');
+        };
+        function open2() {
+            open('https://miro.com/app-install/?response_type=code&client_id=3458764686709387344&redirect_uri=http://localhost:8080/test.html&q=/migration');
+        };
+        // 1. Parse the query string from the current URL (e.g., ?action=login)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 2. Check if the parameter exists
+        if (urlParams.has('action')) {
+            open('https://miro.com/app-install/?response_type=code&client_id=3458764686709387344&redirect_uri=http://localhost:8080/sbx.html&q=/migration');
+        }
+    </script>
+</body>
+</html>
